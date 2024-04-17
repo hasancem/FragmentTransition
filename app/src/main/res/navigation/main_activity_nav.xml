@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="edu.sabanciuniv.it535.fragmenttransition.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_AFragment"
+            app:destination="@id/AFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_XFragment"
+            app:destination="@id/XFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AFragment"
+        android:name="edu.sabanciuniv.it535.fragmenttransition.AFragment"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/action_AFragment_to_BFragment"
+            app:destination="@id/BFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/AFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/BFragment"
+        android:name="edu.sabanciuniv.it535.fragmenttransition.BFragment"
+        android:label="fragment_b"
+        tools:layout="@layout/fragment_b" >
+        <action
+            android:id="@+id/action_BFragment_to_YFragment"
+            app:destination="@id/YFragment"
+            app:popUpTo="@id/BFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/XFragment"
+        android:name="edu.sabanciuniv.it535.fragmenttransition.XFragment"
+        android:label="fragment_x"
+        tools:layout="@layout/fragment_x" >
+        <action
+            android:id="@+id/action_XFragment_to_YFragment"
+            app:destination="@id/YFragment"
+            app:popUpTo="@id/XFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/YFragment"
+        android:name="edu.sabanciuniv.it535.fragmenttransition.YFragment"
+        android:label="fragment_y"
+        tools:layout="@layout/fragment_y" />
+</navigation>
